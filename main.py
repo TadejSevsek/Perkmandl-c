@@ -8,10 +8,8 @@ from coal import Coal
 from menu import *
 from utils import check_first_time_play, mark_tutorial_completed, get_high_score, save_high_score
 
-# Initialize Pygame
 pygame.init()
 
-# Define the custom event for screen updates
 SCREEN_UPDATE = pygame.USEREVENT
 pygame.time.set_timer(SCREEN_UPDATE, 150)
 
@@ -84,7 +82,7 @@ class MAIN:
             self.you_died_menu.draw(self.screen, screen_width, screen_height)
         else:
             self.draw_sky_and_ground()
-            self.coal.draw_coal(self.screen)  # Pass self.screen here
+            self.coal.draw_coal(self.screen)  
             self.train.draw_train(self.screen)
             self.draw_score()
             if self.paused:
@@ -292,7 +290,7 @@ while True:
                     main_game.train.direction = Vector2(-1, 0)
                 if event.key == pygame.K_RIGHT and main_game.train.direction != Vector2(-1, 0):
                     main_game.train.direction = Vector2(1, 0)
-            if event.key == pygame.K_p:
+            if event.key == pygame.K_ESCAPE:
                 main_game.toggle_pause()
             if main_game.tutorial_mode and main_game.tutorial_step == len(main_game.tutorial_steps) - 1:
                 main_game.key_pressed_after_completion = True

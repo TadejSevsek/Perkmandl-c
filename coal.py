@@ -13,7 +13,7 @@ class Coal:
             print(f"Unable to load image: {e}")
             sys.exit()
 
-    def draw_coal(self, screen):  # Add 'screen' as a parameter
+    def draw_coal(self, screen): 
         visual_offset_y = screen_height - (cell_number * cell_size // 2)
         x_pos = int(self.pos.x * cell_size)
         y_pos = int(self.pos.y * cell_size // 2 + visual_offset_y)

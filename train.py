@@ -8,7 +8,7 @@ class Train:
         self.direction = Vector2(0, 0)
         self.new_block = False
 
-    def draw_train(self, screen):  # Add 'screen' as a parameter
+    def draw_train(self, screen):  
         visual_offset_y = screen_height - (cell_number * cell_size // 2)
         if self.direction == Vector2(0, 1):  # Moving downward
             body_blocks = reversed(self.body)  # Render tail first, then body, then head
